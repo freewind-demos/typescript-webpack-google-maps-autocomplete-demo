@@ -3,7 +3,7 @@ const input = document.getElementById('autocomplete')! as HTMLInputElement;
 function setupAutoComplete(): google.maps.places.Autocomplete {
 
   const autocomplete = new google.maps.places.Autocomplete(input as HTMLInputElement);
-  google.maps.event.addListener(autocomplete, 'place_changed', function () {
+  autocomplete.addListener('place_changed', function () {
     const myLocation = autocomplete.getPlace();
     console.log("myLocation", myLocation);
   });
